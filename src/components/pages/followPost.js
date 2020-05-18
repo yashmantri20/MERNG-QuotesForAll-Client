@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import {Button, Grid, Card, Container , Transition,Popup,Image} from 'semantic-ui-react'
 import moment from 'moment'
 import { Link } from 'react-router-dom';
-import LikeButton from '../likeButtonTwo'
+import LikeButtonTwo from '../likeButtonTwo'
 import DeleteButton from '../DeleteButton';
 import { faComment,faShare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -50,7 +50,7 @@ function Posts() {
                               </Card.Content>
                               <Card.Content extra>
                                 <div style={{textAlign:"center"}}>
-                                <LikeButton user={user} post={post}/>
+                                <LikeButtonTwo user={user} post={post}/>
 
                                   <Button className="upload-icon" labelPosition='right' as={Link} to={`/posts/${post.id}`}>
                                   <FontAwesomeIcon className="icon-upload" icon={faComment} color="#38A1F3" size="lg"/>
