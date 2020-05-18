@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import {Button, Grid, Card, Container , Transition,Popup,Image} from 'semantic-ui-react'
 import moment from 'moment'
 import { Link } from 'react-router-dom';
-import LikeButton from '../likeButton'
+import LikeButton from '../LikeButton'
 import DeleteButton from '../DeleteButton';
 import { faComment,faShare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
