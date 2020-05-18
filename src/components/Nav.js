@@ -28,7 +28,7 @@ function Nav() {
     const Nav = user ? (
         <Menu pointing secondary size="huge" color="black" >
             <Menu.Item icon="globe" onClick={handleclick} as={Link} to='/' />
-            {/* <Menu.Item icon="home" onClick={handleclick} as={Link} to='/follow' /> */}
+            <Menu.Item icon="home" onClick={handleclick} as={Link} to='/follow' />
             <Menu.Menu position="right">
             
             <Dropdown item trigger={t} onClick={handleclick} >

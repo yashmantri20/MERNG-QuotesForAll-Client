@@ -31,8 +31,8 @@ function Posts() {
         {loading ? (<h1>Post Loading...</h1>) : (
             <Transition.Group>
                 { data.getPosts && data.getPosts.map((post) => 
-                    (dataR && dataR.getFollowers && dataR.getFollowers.following.length>=1 && dataR.getFollowers.following.map((user)=>
-                        (post.username === user.username ? 
+                    (dataR && dataR.getFollowers && dataR.getFollowers.following.length>=1 && dataR.getFollowers.following.map((follower)=>
+                        (post.username === follower.username ? 
                             <div key={post.id}>
 
                       <Card centered style={{width:"80%"}}>
@@ -50,26 +50,24 @@ function Posts() {
                               </Card.Content>
                               <Card.Content extra>
                                 <div style={{textAlign:"center"}}>
-                                <LikeButton user={user} post={post}/>
+                                    <LikeButton user={user} post={post}/>
 
-                                  <Button className="upload-icon" labelPosition='right' as={Link} to={`/posts/${post.id}`}>
-                                  <FontAwesomeIcon className="icon-upload" icon={faComment} color="#38A1F3" size="lg"/>
-                                  &nbsp;&nbsp;&nbsp;
-                                  <span style={{marginTop:"3.5px"}}>
-                                      {post.commentCount}
-                                  </span>&nbsp;&nbsp;&nbsp;&nbsp;
-                                  </Button>
+                                    <Button className="upload-icon" labelPosition='right' as={Link} to={`/posts/${post.id}`}>
+                                    <FontAwesomeIcon className="icon-upload" icon={faComment} color="#38A1F3" size="lg"/>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <span style={{marginTop:"3.5px"}}>
+                                        {post.commentCount}
+                                    </span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </Button>
 
-                                  <Popup content="Share on twitter" trigger={
-                                  <Button className="upload-icon" labelPosition='right'
-                                  href={`https://twitter.com/intent/tweet?text=${post.body}`}>
-                                  <FontAwesomeIcon className="icon-upload" icon={faShare} color="#38A1F3" size="lg"/>
-                                  </Button>}/>&nbsp;&nbsp;&nbsp;&nbsp;
-
-                                  {user && user.username === post.username && <DeleteButton postId={post.id} />}
-                      </div>
-                  </Card.Content>
-                </Card><br/>
+                                    <Popup content="Share on twitter" trigger={
+                                    <Button className="upload-icon" labelPosition='right'
+                                    href={`https://twitter.com/intent/tweet?text=${post.body}`}>
+                                    <FontAwesomeIcon className="icon-upload" icon={faShare} color="#38A1F3" size="lg"/>
+                                    </Button>}/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                </div>
+                              </Card.Content>
+                        </Card><br/>
                     </div> : ""))))}                
         </Transition.Group>)}
 
