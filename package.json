@@ -15,6 +15,7 @@
     "apollo-client": "^2.6.8",
     "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
+    "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
     "jwt-decode": "^2.2.0",
     "moment": "^2.24.0",
