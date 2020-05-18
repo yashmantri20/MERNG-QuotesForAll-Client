@@ -30,8 +30,8 @@ function Posts() {
         </Grid>
         {loading ? (<h1>Post Loading...</h1>) : (
             <Transition.Group>
-                { dataR && dataR.getFollowers && dataR.getFollowers.following.length>=1 && dataR.getFollowers.following.map((user)=>
-                    data.getPosts && data.getPosts.map((post) => 
+                { data.getPosts && data.getPosts.map((post) => 
+                    (dataR && dataR.getFollowers && dataR.getFollowers.following.length>=1 && dataR.getFollowers.following.map((user)=>
                         (post.username === user.username ? 
                             <div key={post.id}>
 
@@ -70,7 +70,7 @@ function Posts() {
                       </div>
                   </Card.Content>
                 </Card><br/>
-                    </div> : "")))}                
+                    </div> : ""))))}                
         </Transition.Group>)}
 
                
