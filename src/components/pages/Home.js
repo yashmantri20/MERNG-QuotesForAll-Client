@@ -69,9 +69,9 @@ function Home() {
                 
                 <br/>
         </Container>
-        <Footer/>
-        </div>
-        
+        {loading ? "" :
+        <Footer/>}
+        </div>                
     )
 }
 
