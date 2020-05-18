@@ -35,7 +35,7 @@ function Followers({user, data : {username,followers,followCount,followingCount}
         },
     });
 
-    const followbutton = user.username !== username ? (
+    const followbutton =  user && user.username !== username ? (
         follows ? (
             "Unfollow"
         ) : ( 
