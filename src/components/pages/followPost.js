@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import {Button, Grid, Card, Container , Transition,Popup,Image} from 'semantic-ui-react'
 import moment from 'moment'
 import { Link } from 'react-router-dom';
-import LikeButton from '../LikeButton'
+import LikeButton from '../likeButtonTwo'
 import DeleteButton from '../DeleteButton';
 import { faComment,faShare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,8 +30,8 @@ function Posts() {
         </Grid>
         {loading ? (<h1>Post Loading...</h1>) : (
             <Transition.Group>
-                { data.getPosts && data.getPosts.map((post) => 
-                    (dataR && dataR.getFollowers && dataR.getFollowers.following.length>=1 && dataR.getFollowers.following.map((user)=>
+                { dataR && dataR.getFollowers && dataR.getFollowers.following.length>=1 && dataR.getFollowers.following.map((user)=>
+                    data.getPosts && data.getPosts.map((post) => 
                         (post.username === user.username ? 
                             <div key={post.id}>
 
@@ -70,7 +70,7 @@ function Posts() {
                       </div>
                   </Card.Content>
                 </Card><br/>
-                    </div> : ""))))}                
+                    </div> : "")))}                
         </Transition.Group>)}
 
                
