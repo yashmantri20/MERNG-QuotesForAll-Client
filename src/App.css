@@ -1,0 +1,29 @@
+.form{
+    width: 400px;
+    margin: auto;
+}
+
+.upload-icon:hover .icon-upload{
+    font-size: 23px;
+}
+
+.icuser{
+    padding-left: 36%;
+}
+
+@media only screen and (max-width:500px){
+    .icuser{
+        padding-left: 12%;
+    }    
+}
+
+.bg{
+    background-color: #343a40;
+    min-height: 100vh;
+}
+
+h1,h2{
+    color: white;
+}
+
+
