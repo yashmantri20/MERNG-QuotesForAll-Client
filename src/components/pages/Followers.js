@@ -23,11 +23,11 @@ function Followers({user, data : {username,followers,followCount,followingCount}
             
             if(follows === false){
                 setFollower(true)
-                window.location.reload(false)
+                window.location.href = "https://quotes-for-all.netlify.app/"
             }
             else{
                 setFollower(false)
-                window.location.reload(false)
+                window.location.href = "https://quotes-for-all.netlify.app/"
             }   
         },
         onError(err){
