@@ -17,7 +17,7 @@ import SingleUser from './components/pages/SingleUser';
 import followPost from './components/pages/followPost'
 function App() {
   return (
-    <AuthProvider>
+  <AuthProvider>
    <Router>
      <Nav/>
      <Route exact path='/' component={Home}/>
@@ -27,7 +27,6 @@ function App() {
      <Route exact path='/posts/:postId' component={SinglePost}/>
      <Route exact path='/users/:username' component={SingleUser}/>
      <Route exact path='/follow' component={followPost}/>
-     
    </Router>
    </AuthProvider>
   );

@@ -1,22 +1,21 @@
-import React , {useState } from 'react'
-import { Form , Button, TextArea} from 'semantic-ui-react'
-import {useMutation} from '@apollo/react-hooks'
+import React, { useState } from 'react'
+import { Form, Button, TextArea } from 'semantic-ui-react'
+import { useMutation } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 
 function PostForm(props) {
-
     // const [errors,setErrors] = useState({});
-    const [values,setvalues] = useState({
-       body: ""
+    const [values, setvalues] = useState({
+        body: ""
     })
 
     const onChange = (e) => {
-        setvalues({...values , [e.target.name] : e.target.value})
+        setvalues({ ...values, [e.target.name]: e.target.value })
     }
 
-    const [createPost , {error}] = useMutation(CREATE_POST,{
-        variables : values,
-        update(proxy,result){
+    const [createPost, { error }] = useMutation(CREATE_POST, {
+        variables: values,
+        update(proxy, result) {
             const data = proxy.readQuery({
                 query: GET_POSTS
             })
@@ -33,38 +32,34 @@ function PostForm(props) {
         e.preventDefault();
         try {
             await createPost();
-          } catch (e) {
+        } catch (e) {
             console.error(e);
-          }
-        
-
+        }
     }
 
     return (
         <>
-        <div style={{textAlign:"center",width:"100%"}}>
-        <Form onSubmit={onSubmit} noValidate>
-            <Form.Field>
-            <TextArea
-                style={{resize:"none"}}
-                rows={8}
-                placeholder = "Hello world"
-                name = "body"
-                type="text"
-                value = {values.body}
-                error = {error ? true : false}
-                onChange={onChange}/></Form.Field>
-            <br/>
-            <Button color="teal" type="submit">Share</Button>
-            <br/>
-            
-            
-        </Form>
-        {error &&(
-            <div className="ui error message">
-                <li>{error.graphQLErrors[0].message}</li>
-            </div>
-        )}
+            <div style={{ textAlign: "center", width: "100%" }}>
+                <Form onSubmit={onSubmit} noValidate>
+                    <Form.Field>
+                        <TextArea
+                            style={{ resize: "none" }}
+                            rows={8}
+                            placeholder="Hello world"
+                            name="body"
+                            type="text"
+                            value={values.body}
+                            error={error ? true : false}
+                            onChange={onChange} /></Form.Field>
+                    <br />
+                    <Button color="teal" type="submit">Share</Button>
+                    <br />
+                </Form>
+                {error && (
+                    <div className="ui error message">
+                        <li>{error.graphQLErrors[0].message}</li>
+                    </div>
+                )}
         &nbsp;
         </div>
         </>
@@ -98,10 +93,9 @@ mutation createPost(
         commentCount
     }
   }
-
 `;
 
-const GET_POSTS = gql `
+const GET_POSTS = gql`
 {
   getPosts{
     id
@@ -118,6 +112,5 @@ const GET_POSTS = gql `
   }
 }
 `;
-
 
 export default PostForm
