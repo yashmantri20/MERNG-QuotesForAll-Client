@@ -29,4 +29,9 @@ h1,h2{
     color: white;
 }
 
+.guest-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
