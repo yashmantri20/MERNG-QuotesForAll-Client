@@ -21,7 +21,7 @@ Quotes for all is a web app similar to social media where a user can interact wi
 ## Guest Credentials
 
 ```
-Email: test@gmail.com
+Username: Guest
 Password: Test@12345
 ```
 ## Contributing
